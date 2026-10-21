@@ -1,0 +1,607 @@
+\documentclass[12pt,a4paper]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[
+    a4paper,
+    top=1.55cm,
+    bottom=1.35cm,
+    left=1.75cm,
+    right=1.75cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{ragged2e}
+
+% ============================================================
+% COLORS
+% ============================================================
+\definecolor{GEUBlue}{RGB}{43,91,145}
+\definecolor{GEUBannerBlue}{RGB}{0,102,148}
+\definecolor{GEUYellow}{RGB}{255,201,38}
+\definecolor{InstructionGrey}{RGB}{125,125,125}
+
+% ============================================================
+% GENERAL SETTINGS
+% ============================================================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1}
+
+% ============================================================
+% HEADER / FOOTER
+% ============================================================
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{%
+    \fontsize{10.5}{12}\selectfont
+    COURSE NAME: B.Tech CSE\\
+    TEAM ID: T323
+}
+
+\fancyhead[R]{%
+    \fontsize{10.5}{12}\selectfont
+    PHASE-II PROJECT PROGRESS
+}
+
+\fancyfoot[R]{%
+    \fontsize{10}{12}\selectfont
+    Page \thepage
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\headheight}{20pt}
+\setlength{\headsep}{0.65cm}
+\setlength{\footskip}{0.65cm}
+
+% ============================================================
+% BOTTOM YELLOW LINE
+% ============================================================
+\AddToShipoutPictureBG{%
+\begin{tikzpicture}[remember picture,overlay]
+    \fill[GEUYellow]
+    (current page.south west)
+    rectangle
+    ([yshift=0.14cm]current page.south east);
+\end{tikzpicture}
+}
+
+% ============================================================
+% CUSTOM COMMANDS
+% ============================================================
+\newcommand{\sectiontitle}[1]{%
+    {\color{GEUBlue}
+    \fontsize{18}{22}\selectfont #1}
+}
+
+\newcommand{\instruction}[1]{%
+    {\color{InstructionGrey}
+    \fontsize{10.5}{13}\selectfont #1}
+}
+
+\newcommand{\answerbox}[2]{%
+    \begin{tabularx}{\textwidth}{
+        |>{\raggedright\arraybackslash}X|}
+        \hline
+        \parbox[t][#1][t]{\dimexpr\linewidth-12pt\relax}{
+            \vspace{5pt}
+            \fontsize{11}{13}\selectfont #2
+        }\\
+        \hline
+    \end{tabularx}
+}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+
+% ============================================================
+% PAGE 1
+% ============================================================
+
+\vspace*{0.10cm}
+
+% Upload Graphic Era logo as graphicera_logo.png
+    \fbox{%
+        \includegraphics[width=8.0cm,height=8cm,keepaspectratio]{graphicera_logo.png}%
+    }
+\vspace{0.70cm}
+
+\noindent
+\colorbox{GEUBannerBlue}{%
+\parbox{\dimexpr\textwidth-2\fboxsep\relax}{
+    \vspace{0.17cm}
+    {\color{GEUYellow}
+    \fontsize{16.5}{20}\selectfont
+    \bfseries
+    PROJECT AND TEAM INFORMATION}
+    \vspace{0.17cm}
+}}
+
+
+\vspace{0.80cm}
+
+% PROJECT TITLE
+\sectiontitle{Project Title}
+
+\vspace{0.05cm}
+
+
+\vspace{0.40cm}
+
+\answerbox{1.00cm}{SNAKE GAME LOGIC SYSTEM}
+
+\vspace{150cm}
+
+% STUDENT INFORMATION
+% \sectiontitle{Student/Team Information}
+
+% \vspace{0.40cm}
+
+% \begin{tabularx}{\textwidth}{
+% |>{\raggedright\arraybackslash}p{0.66\textwidth}
+% |>{\raggedright\arraybackslash}X|
+% }
+% \hline
+
+% \parbox[t][1.15cm][t]{\linewidth}{
+% \vspace{4pt}
+% \fontsize{10.5}{13}\selectfont
+% Team Name:\\[2pt]
+% Team \# (Mentor needs to assign)
+% }
+% &
+% \\
+% \hline
+
+% \parbox[t][3.65cm][t]{\linewidth}{
+% \vspace{5pt}
+% \fontsize{10.5}{13}\selectfont
+% Team member 1 (Team Lead)\\[3pt]
+% {\color{InstructionGrey}
+% (Last Name, name: student ID: email, picture):}
+% }
+% &
+% \\
+% \hline
+
+% \parbox[t][3.65cm][t]{\linewidth}{
+% \vspace{5pt}
+% \fontsize{10.5}{13}\selectfont
+% Team member 2\\[3pt]
+% {\color{InstructionGrey}
+% (Last Name, name: student ID: email, picture):}
+% }
+% &
+% \\
+% \hline
+
+% \end{tabularx}
+
+% \newpage
+\noindent
+\begin{tabularx}{\textwidth}{|>{\RaggedRight\arraybackslash}p{0.69\textwidth}|>{\RaggedRight\arraybackslash}X|}
+\hline
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+\textit{Team Name:}\\[-1mm]
+\vspace{1.5mm}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\vspace{1.5mm}
+\textit{DSCPP-III-2026-T323}
+\vspace{1.5mm}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 1 (Team Lead)}\\[-1mm]
+\textit{(Anna, Mayank- 2510370093, 2510370093@geu.ac.in):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Anna, Mayank -- 2510370093}\\
+\textit{2510370093@geu.ac.in}
+
+\vspace{1.5mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{WhatsApp Image 2026-10-10 at 5.00.35 PM.jpeg}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 2}\\[-1mm]
+\textit{(Lingwal, Mamta- 2510380154, 2510380154@geu.ac.in):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Lingwal, Mamta -- 2510380154}\\
+\textit{2510380154@geu.ac.in}
+
+\vspace{1.5mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{WhatsApp Image 2026-10-10 at 4.58.26 PM.jpeg}
+\end{minipage}
+\\
+\hline
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textbf{Team member 3}\\[-1mm]
+\textit{(Singh, Abhinav-2510010167, 2510010167@geu.ac.in):}
+\vspace{2.0cm}
+\end{minipage}
+&
+\begin{minipage}[t][3.25cm][t]{\linewidth}
+\vspace{1.5mm}
+\textit{Singh, Abhinav -- 2510010167}\\
+\textit{2510010167@geu.ac.in}
+
+\vspace{1.5mm}
+\includegraphics[width=3.0cm,height=1.5cm,keepaspectratio]{WhatsApp Image 2026-10-10 at 4.35.20 PM.jpeg}
+\end{minipage}
+\\
+\hline
+\end{tabularx}
+
+\newpage
+% ============================================================
+% PAGE 2
+% ============================================================
+
+\vspace*{0.15cm}
+
+\noindent
+\colorbox{GEUBannerBlue}{%
+\parbox{\dimexpr\textwidth-2\fboxsep\relax}{
+    \vspace{0.18cm}
+    {\color{GEUYellow}
+    \fontsize{17}{21}\selectfont
+    \bfseries
+    PHASE-II PROJECT PROGRESS DESCRIPTION}
+    \vspace{0.18cm}
+}}
+
+\vspace{0.70cm}
+
+% PROJECT ABSTRACT
+\sectiontitle{Project Abstract}
+
+\vspace{0.05cm}
+
+
+\vspace{0.12cm}
+
+\answerbox{5.80cm}{Snake Game Logic System is a console-based game created through the use of C++. In other words, the main task of the project is to design the Snake Game and simultaneously understand how to solve programming problems using such techniques as linked lists, pointers, search, move, collision detection, etc.\\
+
+The project involves various functions for implementation of such stages as initial stage, key presses, move, food creation, collision detection, score count and display.
+Such a structure of the system makes the code more readable, testable, easy to maintain and modify.\\
+
+Overall, the Snake Game Logic System provides practical skills of C++ programming, dynamic memory allocation, usage of pointers and linked lists.
+Furthermore, it makes possible to use the DSA principles in practice. }
+
+\vspace{0.70cm}
+
+% UPDATED PROJECT APPROACH
+\sectiontitle{Updated Project Approach and Architecture}
+
+\vspace{0.05cm}
+
+
+\vspace{0.25cm}
+
+\answerbox{8.75cm}{We are going to develop the console version of Snake Game using C++. This implementation would have a modular approach. The game would comprise of functions for the following game actions: game initiation, keyboard events processing, snake movement, creation of food, checking for collisions, scoring, visualization of the game board, and game restarts. \\
+
+The main data structure is single linked list, where each element holds the coordinates of a certain body part of a snake and reference to other node of the list. The head element is the first element of the list, hence it denotes the snake's head; while tail is the last element denoting its tail. When moving, a new node is added to the head of the list, but if no food is consumed, the tail is deleted.\\
+The architecture utilizes an iteration-based loop which consists of three key components namely: input, logic, and drawing. Specifically, "input()" function handles input from keyboard, "logic()" takes care of moving the snake and collision detection while "draw()" renders the new game board. Finally, "setup()" function is used to initialize or reinitialize the game.\\
+
+The program utilizes C++ libraries such as "<iostream>", "<conio.h>", "<chrono>", "<thread>", and "<cstdlib>". There is no need for any game engine or network communication protocol in the project. In terms of learning, the architecture gives a tangible illustration of using linked lists, pointers, dynamic memory allocation, searching, and collision detection algorithms.}
+
+\newpage
+
+% ============================================================
+% PAGE 3
+% ============================================================
+
+\vspace*{0.20cm}
+
+% TASKS COMPLETED
+\sectiontitle{Tasks Completed }
+
+\vspace{0.05cm}
+
+\vspace{0.20cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\raggedright\arraybackslash}X
+|>{\raggedright\arraybackslash}X|
+}
+\hline
+\textbf{Task Completed} &
+\textbf{Team Member}\\
+\hline
+
+\parbox[t][19.25cm][t]{\linewidth}{1. Snake Movements: We used "addHead" and "removeTail" operations to implement movements of snake where add operation adds a new head and remove operation deletes the last node.\\
+
+2. Collision Detection: Implemented "isSnakePosition()" and collision detection functions to check for snake's collision with the board or itself.\\
+
+3. Food Generation and Score Update: Created function "generateFood()" that places food on an empty location and made score update each time when food is eaten.\\
+
+4. Game Setup: We used "setup" function which initializes snake, score and direction, and also creates first food in the game.\\
+
+5. Real Time Keyboard Input: Used W, A, S, and D keys for real time input.\\
+
+6. Game Visualization and Controls: Created "draw()" function that visualizes the board, snake, food, and score, as well as provides automatic movement, game over message, game restart with R key, and game termination with X key.\\
+
+7. Testing: Tested the implemented game features, including snake movement, keyboard controls, food generation, scoring, and collision detection, to verify that the main gameplay functions work as expected.\\
+
+8. Debugging: Identified and resolved errors encountered during implementation, improving the correctness of linked-list operations, game logic, and overall program execution.
+}
+&
+\parbox[t][10.25cm][t]{\linewidth}{-Mayank Anna\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+
+-Mamta Lingwal\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+
+-Abhinav Singh}
+\\
+\hline
+\end{tabularx}
+
+\vspace{10cm}
+
+% CHALLENGES
+\sectiontitle{Challenges/Roadblocks}
+
+\vspace{0.05cm}
+
+\vspace{0.18cm}
+
+\answerbox{8.05cm}{1- Continuous Movement: Implementing continuous movement along with keyboard input without having to press Enter posed a problem. This was overcome through the use of functions such as "kbhit()" and "getch()" from "<conio.h>" and the library "<chrono>". \\
+
+2- Console Output and Portability Issues: Frequent drawing of console output leads to flickering on screen. Also, functions such as "<conio.h>" and "system("cls")" are Windows specific. This can be considered in future improvements to the program.\\
+
+3- Collision Detection: Checking for collision with walls and snake itself involved determining the position of the next head before changing the linked list. There is also an exceptional case if the position of the next head is the same as the tail since usually, the tail is moving away at the same time.\\
+
+4- Game Restart and Memory Management: Game restart entails resetting the score, direction, and game status after freeing allocated nodes. The function "clearSnake()" was used to free up the memory used by the linked list.
+}
+
+\vspace{0.65cm}
+
+% TASKS PENDING
+\sectiontitle{Tasks Pending }
+
+\vspace{0.05cm}
+
+\vspace{0.18cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\raggedright\arraybackslash}X
+|>{\raggedright\arraybackslash}X|
+}
+\hline
+
+\textbf{Task Pending} &
+\textbf{Team Member (to complete the task)}
+\\
+\hline
+
+\parbox[t][14.25cm][t]{\linewidth}{1. Implementation of BFS Search Algorithm: Implement BFS search algorithm that will help the snake find ways in a grid. Useful for helping the snake find the shortest way to food and avoid obstacles when there is one available.\\
+2. Practical Applications: Research real-life applications of the path-finding algorithms used in the game. This may include robot navigation, maze solving, warehouse routing, and route optimization.\\
+
+3. Creation of Various Levels: Add various levels of difficulty to the game, for example, increase the speed of the snake or introduce obstacles and change the grid layout.\\
+4. improvement in graphics: Improve the visuals in the game through an improved interface, better depiction of the food and snake, enhanced score display, and improved screen refresh rate.\\
+
+5. Testing Memory Management: Ensure that memory is allocated and deallocated correctly in order to avoid memory leaks when playing the game or resetting the game.\\
+6.Identify The Limitations Of Existing Game: Identify the limitations that the existing console based game holds due to its simple graphics and lack of free movement options.
+}
+&
+\parbox[t][1.25cm][t]{\linewidth}{-Mayank Anna\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+
+-Mamta Lingwal\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+
+-Abhinav Singh\\}
+\\
+\hline
+
+\end{tabularx}
+
+\newpage
+
+% ============================================================
+% PAGE 4
+% ============================================================
+
+\vspace*{0.30cm}
+
+% PROJECT OUTCOME
+\sectiontitle{Project Outcome/Deliverables}
+
+\vspace{0.05cm}
+
+\vspace{0.35cm}
+
+\answerbox{9.50cm}{Some of the most important deliverables and outcomes are:\\
+
+1. Snake Game: An interactive game for continuous movement, keyboard operations, taking foods, scoring and detecting collisions. \\
+
+2. Linked List: Linked list data structure consisting of one node for storing body parts of the snake. \\
+
+3. Game Functions: Creating foods, making the snake grow, detecting collisions between the walls/snake, and game restart. \\
+
+4. Modular C++ Code: Functions like “setup()”, “input()”, “logic()”, “draw()”, “addHead()”, and “removeTail()” for better clarity and maintainability.\\
+
+5. Documentation of Project: Report of the approach, design, algorithms, implementation and other details of the project with problems and results.\\ 
+
+6. Demo and Presentation: Demonstration of the game to understand the working of linked lists, pointers and dynamic memory allocation in the game.}
+
+\vspace{0.75cm}
+
+% PROGRESS OVERVIEW
+\sectiontitle{Progress Overview}
+
+\vspace{0.05cm}
+
+\vspace{0.25cm}
+
+\answerbox{4.45cm}{It seems that the development of the basic core for the project proceeds quite good; however, validation of the memory management, and enhancements of console display are yet pending, and this task requires additional time to ensure reliable operation of the game.\\
+
+The implementation of the basic functionality of the game was made in advance before any other documentation or validation; this is due to the reason that the core of the game is already implemented. The following task is implementation of various game scenarios, elimination of bugs, screenshots of output and finalization of the report/presentation of the project.}
+
+\newpage
+
+% ============================================================
+% PAGE 5
+% ============================================================
+
+\vspace*{0.20cm}
+
+% CODEBASE
+\sectiontitle{Codebase Information}
+
+\vspace{0.05cm}
+
+\vspace{0.20cm}
+
+\answerbox{7.70cm}{GitHub Repository: SNAKE-GAME-LOGIC-SYSTEM\\
+Programming Language Used: C++.\\
+
+Significant Commits:\\
+
+1. Creation of Basic Project: Creation of C++ project for the logic system of the snake game.\\
+
+2. Linked List Coding: Implementation of Node structure and addHead(), removeTail(), and isSnakePosition() functions to handle the snake’s body.\\
+
+3. Implementation of Logic of the Game: Automatic moving, keyboard movements, creating food, and scoring mechanism.\\
+
+4. Completion of the Game: Integration of display of the game, ending the game, restarting, and cleaning of the memory.}
+
+\vspace{0.65cm}
+
+% TESTING
+\sectiontitle{Testing and Validation Status}
+
+\vspace{0.05cm}
+
+\vspace{0.30cm}
+
+\begin{tabularx}{\textwidth}{
+|>{\raggedright\arraybackslash}p{0.34\textwidth}
+|>{\raggedright\arraybackslash}p{0.31\textwidth}
+|>{\raggedright\arraybackslash}X|
+}
+\hline
+
+\textbf{Test Type} &
+\textbf{Status (Pass/Fail)} &
+\textbf{Notes}
+\\
+\hline
+
+\parbox[t][2.40cm][t]{\linewidth}{Keyboard Controls\\
+
+Food Generation\\
+\\
+
+Wall or Self Collision\\
+\\
+
+Score Calculation
+}
+&
+\parbox[t][1.20cm][t]{\linewidth}{Pass\\
+
+Pass\\
+\\
+
+Pass\\
+\\
+
+Pass}
+&
+\parbox[t][5.20cm][t]{\linewidth}{-Check the controls W, A, S, and D.\\
+-Food should spawn inside the board and not on the body of the snake.\\
+-Check whether the game ends by hitting any of the borders or biting itself.\\
+-The score must increase after eating food.}
+\\
+\hline
+
+\end{tabularx}
+
+\vspace{0.65cm}
+
+% DELIVERABLES PROGRESS
+\sectiontitle{Deliverables Progress}
+
+\vspace{0.05cm}
+
+\vspace{0.25cm}
+
+\answerbox{6.20cm}{Deliverable-: Current Status\\
+
+Project Proposal and Planning- Completed\\
+C++ Source Code Implementation- Completed\\
+Snake Body Management using Singly Linked List- Completed\\
+Automatic Snake Movement and Controls via Keyboard- Completed\\
+Food Placement, Scoring and Growth of Snake- Completed\\
+Detection of Collisions with Wall and Self- Collision- Completed\\
+Repetition of Game and Termination- Completed\\
+Testing and Validation- In progress\\
+Bug Fixes and Improvements- In progress}
+
+\end{document}
